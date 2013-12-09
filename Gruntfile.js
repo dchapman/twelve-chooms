@@ -23,7 +23,6 @@ module.exports = function(grunt) {
                     'js/build/combined.js': [
                         'js/src/vendor/media.match.js',
                         'js/src/vendor/jquery.transit.min.js',
-                        'js/src/vendor/jquery.touchSwipe.min.js',
                         'js/src/vendor/waypoints.min.js',
                         'js/src/vendor/waypoints-sticky.min.js',
                         'js/src/main.js'
