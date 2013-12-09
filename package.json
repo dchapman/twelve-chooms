@@ -1,0 +1,22 @@
+{
+  "name": "The Twelve Chooms of Christmas",
+  "version": "0.1.0",
+  "author": {
+    "name": "David Chapman",
+    "email": "hello@thisischapman.com",
+    "url": "https://github.com/dchapman"
+  },
+  "description": "A little experiment with Spotify for the holidays",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dchapman/twelve-chooms.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-webfont": "~0.1.10",
+    "grunt-contrib-compass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
