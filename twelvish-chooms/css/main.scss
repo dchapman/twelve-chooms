@@ -1,0 +1,131 @@
+/* structure */
+html {}
+
+body {}
+
+#page-snowflakes {}
+
+#page-wrapper {}
+
+#page-header {
+  .page-title {}
+
+}
+
+#main-content {}
+
+#playlists-container {}
+
+#playlists-controls {}
+
+#playlists-scores {}
+
+#results-container {}
+
+
+/* typography */
+p.body {}
+
+.notification {
+  &.is-positive {}
+
+  &.is-negative {}
+}
+
+
+/* components */
+.snowflake {}
+
+.photo {}
+
+.btn {
+  &.btn--guess {}
+
+  &.btn--share {}
+
+  &.btn--continue {}
+}
+
+form {}
+
+select {
+  option {
+    &.is-blank {}
+  }
+}
+
+.advent {}
+
+.playlists-control {
+  &.playlists-control--prev {}
+
+  &.playlists-control--next {}
+}
+
+.score {
+  &.score--correct {}
+
+  &.score--incorrect {}
+}
+
+.signature {
+  .love {}
+}
+
+/* navigation */
+#playlists-navigation {
+  ul {}
+}
+
+li.playlists-navigation__item {}
+
+a.playlists-navigation__link {}
+
+.playlists-navigation__photo {}
+
+
+/* playlist */
+.playlist {
+  &.is-unguessed {}
+
+  &.is-correct {}
+
+  &.is-incorrect {}
+}
+
+.playlist__container {}
+
+.playlist__photos {}
+
+.playlist__photo {}
+
+.playlist__photo--made-for {}
+
+.playlist__photo--made-by {}
+
+.playlist__header {}
+
+.playlist__intro {}
+
+.playlist__attribution {}
+
+.playlist__made-for {
+  strong {}
+}
+
+.playlist__title {}
+
+.playlist__description {}
+
+.playlist__content {}
+
+
+/* results */
+.results__final-score {}
+
+.results__judgement {}
+
+.results__merry-christmas {}
+
+.results__closing {}
+
