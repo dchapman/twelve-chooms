@@ -1,0 +1,37 @@
+.snowflake {}
+
+.photo {}
+
+.btn {
+  &.btn--guess {}
+
+  &.btn--share {}
+
+  &.btn--continue {}
+}
+
+form {}
+
+select {
+  option {
+    &.is-blank {}
+  }
+}
+
+.advent {}
+
+.playlists-control {
+  &.playlists-control--prev {}
+
+  &.playlists-control--next {}
+}
+
+.score {
+  &.score--correct {}
+
+  &.score--incorrect {}
+}
+
+.signature {
+  .love {}
+}

@@ -3,42 +3,216 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <title>The Twelve Chooms of Christmas</title>
 
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <div id="page-wrapper">
-            <nav id="page-navigation"></nav>
+    <meta name="description" content="The description for the Twelve Chooms of Christmas">
+    <meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1, user-scalable=no">
 
-            <main id="page-content" role="main">
-                <div class="container container--full-width">
+    <link rel="stylesheet" href="css/main.css">
 
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+<!--<div id="page-snowflakes">
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+    <span class="snowflake"></span>
+</div>-->
+
+<div id="page-wrapper">
+    <header id="page-header" role="banner">
+        <h1 class="page-title">The 12 Chooms of Christmas</h1>
+        <p class="body">Lorem ipsum doler sit amet, consectuar adipiscing tolet ernum. Seddendet genis felice poris aculae menet. Lorem ipsum doler sit amet, consectuar adipiscing tolet ernum. Seddendet genis felice poris aculae menet.</p>
+
+        <button class="btn btn--begin">Let the games begin</button>
+    </header>
+
+    <main id="page-content" role="main">
+        <div id="playlists-container">
+            <section id="playlist-kathia" class="playlist is-unguessed">
+                <div class="playlist__container">
+                    <div class="playlist__photos">
+                        <span class="photo playlist__photo playlist__photo--made-for">Kathia</span>
+                        <span class="photo playlist__photo playlist__photo--made-by"></span>
+                    </div>
+
+                    <header class="playlist__header">
+                        <h4 class="playlist__intro">On the <span class="playlist__number">1<super>st</super> choom of Christmas</span></h4>
+
+                        <div class="playlist__attribution">
+                            <p class="playlist__made-for">made for <strong>Kathia:</strong></p>
+                        </div>
+
+                        <h2 class="playlist__title">Title of the Playlist</h2>
+                        <p class="playlist__description">An optional description for the playlist</p>
+                    </header>
+
+                    <div class="playlist__content">
+                        <form id="playlist-form-guess-1" class="form">
+                            <select class="select playlist-guess__select">
+                                <option value="" selected="selected" class="is-blank"></option>
+                                <option value="Alex">Alex</option>
+                                <option value="Jeff">Casey</option>
+                                <option value="Danielle">Danielle</option>
+                                <option value="DJ">DJ</option>
+                                <option value="Jason">Jason</option>
+                                <option value="Jeff">Jeff</option>
+                                <option value="Jessica">Jessica</option>
+                                <option value="Julia">Julia</option>
+                                <option value="Kathia">Kathia</option>
+                                <option value="Maria">Maria</option>
+                                <option value="Suzie">Suzie</option>
+                                <option value="Vicky">Vicky</option>
+                            </select>
+
+                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+
+                            <button type="submit" class="btn btn--guess">Guess</button>
+                        </form>
+
+                        <div class="advent"></div>
+
+                        <div class="playlist__spotify">
+                            <!-- TEMP: Alex Weston - Yellow Lounge test -->
+                            <iframe src="https://embed.spotify.com/?uri=spotify:user:aweston308:playlist:10VqQirDrxAgPqFKgsCNd5" width="438" height="708" frameborder="0" allowtransparency="true"></iframe>
+                        </div>
+                    </div>
                 </div>
-            </main>
+            </section>
+
+            <ul id="playlists-controls">
+                <li><a class="icon icon_arrow-prev playlists-control playlist-control--prev"></a></li>
+                <li><a class="icon icon_arrow-next playlists-control playlist-control--next"></a></li>
+            </ul>
+
+            <div id="playlists-scores">
+                <span class="score score--correct">0 nailed</span>
+                <span class="score score--incorrect">0 whiffed</span>
+            </div>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <div id="results">
+            <h1 class="results__final-score">You managed to correctly guess <span class="tally">5</span> of your friends.</h1>
+            <p class="results__judgement">Yeah, maybe you should've taken your friends out for coffee for a good music conversation more often, jeez.</p>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            <div class="btn-container">
+                <a href="#" class="btn btn--share">Share your triumph</a>
+                <a href="#closing" class="btn btn--continue">Or just keep going</a>
+            </div>
+        </div>
+
+        <div id="closing">
+            <h2 class="results__merry-christmas">Merry Christmas, Choom Gang!</h2>
+            <p class="body results__closing">You guys all did a kickass job putting these together, I couldn't be prouder to have friends with good taste. Music and Choom forever, and a happy New Year!</p>
+
+            <div class="signature">
+                <span class="love">Love,</span> David
+            </div>
+        </div>
+    </main>
+
+    <nav id="playlists-navigation">
+        <ul>
+            <li class="playlists-navigation__item">
+                <a href="#playlist-kathia" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-jason" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-jeff" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-vicky" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-casey" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-jessica" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-alex" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-julia" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-maria" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-danielle" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-dj" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+
+            <li class="playlists-navigation__item">
+                <a href="#playlist-suzie" class="link-wrapper playlists-navigation__link">
+                    <span class="photo playlists-navigation__photo"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+<script src="js/combined.min.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
+</body>
 </html>

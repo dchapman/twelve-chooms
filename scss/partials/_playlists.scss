@@ -1,0 +1,33 @@
+.playlist {
+  &.is-unguessed {}
+
+  &.is-correct {}
+
+  &.is-incorrect {}
+}
+
+.playlist__container {}
+
+.playlist__photos {}
+
+.playlist__photo {}
+
+.playlist__photo--made-for {}
+
+.playlist__photo--made-by {}
+
+.playlist__header {}
+
+.playlist__intro {}
+
+.playlist__attribution {}
+
+.playlist__made-for {
+  strong {}
+}
+
+.playlist__title {}
+
+.playlist__description {}
+
+.playlist__content {}

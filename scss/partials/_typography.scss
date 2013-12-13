@@ -1,0 +1,7 @@
+p.body {}
+
+.notification {
+  &.is-positive {}
+
+  &.is-negative {}
+}
