@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -21,10 +20,9 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     'js/build/combined.js': [
-                        'js/src/vendor/media.match.js',
-                        'js/src/vendor/jquery.transit.min.js',
+                        'js/src/vendor/jquery.easing.1.3.js',
+                        'js/src/vendor/jquery.scrollTo-1.4.3.1.js',
                         'js/src/vendor/waypoints.min.js',
-                        'js/src/vendor/waypoints-sticky.min.js',
                         'js/src/main.js'
                     ]
                 }
@@ -53,7 +51,7 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: '**/*.scss',
-                tasks: ['compass', 'bumpVersion']
+                tasks: ['compass']
             },
             icons: {
                 files: ['icons/*.svg'],

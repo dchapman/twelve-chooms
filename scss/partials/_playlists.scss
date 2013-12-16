@@ -1,14 +1,18 @@
 .playlist {
-  &.is-unguessed {}
+  box-shadow: inset 0 -1px 0 blue;
 
-  &.is-correct {}
+  &.is-unguessed {
+    background-color: lightblue;
+  }
+
+  &.is-correct {
+    background-color: lightblue;
+  }
 
   &.is-incorrect {}
 }
 
 .playlist__container {}
-
-.playlist__photos {}
 
 .playlist__photo {}
 
@@ -16,9 +20,18 @@
 
 .playlist__photo--made-by {}
 
-.playlist__header {}
+.playlist__photo--mystery {}
 
-.playlist__intro {}
+.playlist__photos {}
+
+.playlist__header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 3.4rem;
+}
+
+.playlist__intro {
+}
 
 .playlist__attribution {}
 
@@ -28,6 +41,11 @@
 
 .playlist__title {}
 
-.playlist__description {}
+.playlist__content {
+  overflow: hidden;
+}
 
-.playlist__content {}
+.playlist__spotify {
+  float: left;
+  padding-right: 3.4rem;
+}

@@ -1,0 +1,22 @@
+.container--vertical {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+
+  .vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
+/* http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php */
+.cf:after {
+  content: '';
+  display: table;
+  clear: both;
+}
