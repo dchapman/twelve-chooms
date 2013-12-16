@@ -30,7 +30,7 @@
             },
             'jessica': {
                 name: 'Jessica',
-                authored: 'jeffrey'
+                authored: 'jeff'
             },
             'julia': {
                 name: 'Julia',
@@ -54,6 +54,10 @@
             }
         };
 
+        var responseTaunt = [],
+            responseIncorrect = [],
+            responseCorrect = [];
+
         $(window).on('scroll', function(e) {
             var st = $(this).scrollTop();
             if (st > lastScrollTop){
@@ -72,6 +76,11 @@
            $('body').scrollTo('#page-content', 1000, {easing: 'easeInOutCirc'});
         });
 
+        // continue experience
+        $body.on('click', '.btn--continue', function(e) {
+            console.log('advancing to next playlist');
+        });
+
         // change text when playlist selected
         $body.on('change', '.playlist-guess__select', function(e) {
             console.log('someone selected something!');
@@ -85,7 +94,7 @@
 
             console.log(guessCheck);
 
-            if(actual === receiver) {
+            if(guessCheck === receiver) {
                 console.log('correct!')
             } else {
                 console.log('incorrect!');
