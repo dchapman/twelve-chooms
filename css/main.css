@@ -1,0 +1,387 @@
+/* line 2, ../scss/neat/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+/* line 2, ../scss/partials/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 12, ../scss/partials/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 16, ../scss/partials/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 20, ../scss/partials/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../scss/partials/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 28, ../scss/partials/_reset.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 33, ../scss/partials/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, ../scss/partials/_structure.scss */
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 7, ../scss/partials/_structure.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 11, ../scss/partials/_structure.scss */
+body {
+  font-size: 1.6rem;
+}
+
+/* line 17, ../scss/partials/_structure.scss */
+#page-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 23, ../scss/partials/_structure.scss */
+#introduction {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  -webkit-transition: all 1.2s ease-in-out;
+}
+/* line 33, ../scss/partials/_structure.scss */
+#introduction.is-hidden {
+  margin-top: -100%;
+}
+
+/* line 38, ../scss/partials/_structure.scss */
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+  backface-visiblity: hidden;
+  z-index: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* line 52, ../scss/partials/_structure.scss */
+.page > .container {
+  opacity: 0;
+}
+
+/* line 58, ../scss/partials/_structure.scss */
+.is-current,
+.no-js .page {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+/* line 65, ../scss/partials/_structure.scss */
+.is-current > .container,
+.no-js .page > .container {
+  opacity: 1;
+}
+
+/* line 70, ../scss/partials/_structure.scss */
+.no-js body {
+  overflow: auto;
+}
+
+/* line 76, ../scss/partials/_structure.scss */
+.container {
+  min-width: 32rem;
+  max-width: 97.8rem;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 3.4rem;
+}
+
+/* line 87, ../scss/partials/_structure.scss */
+.overlay-element {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+/* line 94, ../scss/partials/_structure.scss */
+#playlists-controls {
+  bottom: 0;
+}
+
+/* line 98, ../scss/partials/_structure.scss */
+#playlists-scores {
+  top: 0;
+}
+
+/* line 1, ../scss/partials/_utility.scss */
+.container--vertical {
+  height: 100%;
+}
+/* line 4, ../scss/partials/_utility.scss */
+.container--vertical:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+/* line 12, ../scss/partials/_utility.scss */
+.container--vertical .vertical-center {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php */
+/* line 20, ../scss/partials/_utility.scss */
+.cf:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* line 2, ../scss/partials/_animations.scss */
+.page--move-to-top {
+  -webkit-animation: moveToTop 0.8s ease both;
+  -moz-animation: moveToTop 0.8s ease both;
+  animation: moveToTop 0.8s ease both;
+}
+
+/* line 8, ../scss/partials/_animations.scss */
+.page--move-from-bottom {
+  -webkit-animation: moveFromBottom .6s ease;
+  -moz-animation: moveFromBottom .6s ease;
+  animation: moveFromBottom .6s ease;
+}
+
+@-webkit-keyframes moveToTop {
+  /* line 16, ../scss/partials/_animations.scss */
+  to {
+    -webkit-transform: translateY(-100%);
+  }
+}
+
+@-moz-keyframes moveToTop {
+  /* line 19, ../scss/partials/_animations.scss */
+  to {
+    -moz-transform: translateY(-100%);
+  }
+}
+
+@keyframes moveToTop {
+  /* line 22, ../scss/partials/_animations.scss */
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@-webkit-keyframes moveFromBottom {
+  /* line 26, ../scss/partials/_animations.scss */
+  from {
+    -webkit-transform: translateY(100%);
+  }
+}
+
+@-moz-keyframes moveFromBottom {
+  /* line 29, ../scss/partials/_animations.scss */
+  from {
+    -moz-transform: translateY(100%);
+  }
+}
+
+@keyframes moveFromBottom {
+  /* line 32, ../scss/partials/_animations.scss */
+  from {
+    transform: translateY(100%);
+  }
+}
+
+/* line 5, ../scss/partials/_components.scss */
+.btn {
+  cursor: pointer;
+  background-color: #ae2f27;
+  border: none;
+  border-radius: 0.2rem;
+  color: #fafafa;
+  padding: 1.6rem 2rem 1.2rem;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: all 0.6s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+/* line 27, ../scss/partials/_components.scss */
+.btn:hover {
+  color: lightpink;
+}
+
+/* line 32, ../scss/partials/_components.scss */
+.btn--guess {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px);
+}
+
+/* line 39, ../scss/partials/_components.scss */
+.btn--continue {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* line 1, ../scss/partials/_introduction.scss */
+#introduction {
+  background-color: #add6e4;
+  text-align: center;
+}
+/* line 5, ../scss/partials/_introduction.scss */
+#introduction .page-title {
+  color: #fafafa;
+  font-family: arial, helevetica, sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+/* line 12, ../scss/partials/_introduction.scss */
+#introduction .page-title:before {
+  content: '';
+}
+/* line 17, ../scss/partials/_introduction.scss */
+#introduction .body {
+  margin-bottom: 3.4rem;
+}
+
+/* line 3, ../scss/partials/_playlists.scss */
+.playlist.is-unguessed .btn--guess {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 10, ../scss/partials/_playlists.scss */
+.playlist.is-unguessed .btn--continue {
+  opacity: 0;
+  -webkit-transform: translateX(100px);
+  transform: translateX(100px);
+}
+/* line 17, ../scss/partials/_playlists.scss */
+.playlist.is-unguessed .playlist-guess__select {
+  opacity: 1;
+}
+/* line 23, ../scss/partials/_playlists.scss */
+.playlist.is-correct .playlist__author {
+  color: #85b394;
+}
+/* line 29, ../scss/partials/_playlists.scss */
+.playlist.is-incorrect .playlist__author {
+  /*color: $tc_red;*/
+  color: lightpink;
+}
+
+/* line 50, ../scss/partials/_playlists.scss */
+.playlist__header {
+  text-align: center;
+  margin: 3.4rem auto;
+  padding: 2.2rem;
+  background-color: #fafafa;
+}
+
+/* line 57, ../scss/partials/_playlists.scss */
+.playlist__intro {
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* line 67, ../scss/partials/_playlists.scss */
+.playlist__made-for {
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+  text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.4);
+}
+/* line 75, ../scss/partials/_playlists.scss */
+.playlist__made-for .playlist__author {
+  color: lightblue;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+/* line 85, ../scss/partials/_playlists.scss */
+.playlist__title {
+  color: #fafafa;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6.4rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.4);
+  margin-bottom: 2.2rem;
+}
+
+/* line 95, ../scss/partials/_playlists.scss */
+.playlist__content {
+  overflow: hidden;
+}
+
+/* line 99, ../scss/partials/_playlists.scss */
+.playlist-guess__select {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* line 106, ../scss/partials/_playlists.scss */
+.playlist__spotify {
+  float: left;
+  padding-right: 3.4rem;
+}

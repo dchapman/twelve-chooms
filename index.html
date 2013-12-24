@@ -10,7 +10,7 @@
     <title>The Twelve Chooms of Christmas</title>
 
     <meta name="description" content="The description for the Twelve Chooms of Christmas">
-    <meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <link rel="stylesheet" href="css/main.css">
 
@@ -18,23 +18,11 @@
 </head>
 
 <body>
-<!--<div id="page-snowflakes">
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-    <span class="snowflake"></span>
-</div>-->
 
 <div id="page-wrapper">
-    <header id="page-header" role="banner">
+    <header id="introduction" role="banner">
         <div class="container container--vertical">
-            <div class="vertical-center">
+            <div class="vertical-center cf">
                 <h1 class="page-title">The 12 Chooms of Christmas</h1>
                 <p class="body">Lorem ipsum doler sit amet, consectuar adipiscing tolet ernum. Seddendet genis felice poris aculae menet. Lorem ipsum doler sit amet, consectuar adipiscing tolet ernum. Seddendet genis felice poris aculae menet.</p>
 
@@ -42,64 +30,52 @@
             </div>
         </div>
     </header>
-
+    
     <main id="page-content" role="main">
-        <section id="playlist-kathia" class="playlist is-unguessed">
+        <section id="playlist-kathia" class="page playlist is-unguessed" style="background-image: url('img/bg_beige-snowmen.jpg');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
-                    <div class="playlist__photos">
-                        <span class="photo playlist__photo playlist__photo--made-for"></span>
-                        <span class="photo playlist__photo playlist__photo--made-by playlist__photo--mystery"></span>
-                    </div>
-
                     <header class="playlist__header">
                         <h4 class="playlist__intro">On the <span class="playlist__number">1<super>st</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Kathia:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Kathia:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Title of the Playlist</h2>
-                        
                     </header>
 
                     <div class="playlist__spotify">
-                        <!-- TEMP: Alex Weston - Yellow Lounge test -->
                         <iframe src="https://embed.spotify.com/?uri=spotify:user:1256498657:playlist:0ZqCgcnFNWg3YkFIwbgilY" width="320" height="372" frameborder="0" allowtransparency="true"></iframe>
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-1" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
-
-                        <button class="btn btn--continue">Continue</button>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-jason" class="playlist is-unguessed">
+        <section id="playlist-jason" class="page playlist is-unguessed" style="background-image: url('img/bg_bough-ornament.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -111,7 +87,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">2<super>nd</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Jason:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Jason:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Title of the Playlist</h2>
@@ -124,35 +100,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-2" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-jeff" class="playlist is-unguessed">
+        <section id="playlist-jeff" class="page playlist is-unguessed" style="background-image: url('img/bg_cloud-ribbons.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -164,7 +137,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">3<super>rd</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Jeff:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Jeff:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Title of the Playlist</h2>
@@ -177,35 +150,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-3" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-vicky" class="playlist is-unguessed">
+        <section id="playlist-vicky" class="page playlist is-unguessed" style="background-image: url('img/bg_cookie-cutters.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -217,7 +187,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">4<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Vicky:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Vicky:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Title of the Playlist</h2>
@@ -230,35 +200,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-4" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-casey" class="playlist is-unguessed">
+        <section id="playlist-casey" class="page playlist is-unguessed" style="background-image: url('img/bg_pastel-ornaments.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -270,7 +237,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">5<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Casey:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Casey:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Santa Choom</h2>
@@ -281,35 +248,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-5" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-jessica" class="playlist is-unguessed">
+        <section id="playlist-jessica" class="page playlist is-unguessed" style="background-image: url('img/bg_pastel-stripes.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -321,7 +285,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">6<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Jessica:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Jessica:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Jessica Balls All The Way</h2>
@@ -334,35 +298,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-6" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-alex" class="playlist is-unguessed">
+        <section id="playlist-alex" class="page playlist is-unguessed" style="background-image: url('img/bg_quilt-tree.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -374,7 +335,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">7<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Alex:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Alex:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">A Man-Love Supreme</h2>
@@ -386,35 +347,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-7" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-julia" class="playlist is-unguessed">
+        <section id="playlist-julia" class="page playlist is-unguessed" style="background-image: url('img/bg_snowman.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -426,7 +384,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">8<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Julia:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Julia:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Title of the Playlist</h2>
@@ -439,35 +397,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-8" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-maria" class="playlist is-unguessed">
+        <section id="playlist-maria" class="page playlist is-unguessed" style="background-image: url('img/bg_string-ornaments.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -479,7 +434,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">9<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Maria:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Maria:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Title of the Playlist</h2>
@@ -492,35 +447,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-9" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-danielle" class="playlist is-unguessed">
+        <section id="playlist-danielle" class="page playlist is-unguessed" style="background-image: url('img/bg_stripe-trees.jpg');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -532,7 +484,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">10<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>Danielle:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Danielle:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Ode to Fleischwoman</h2>
@@ -544,35 +496,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-10" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-dj" class="playlist is-unguessed">
+        <section id="playlist-dj" class="page playlist is-unguessed" style="background-image: url('img/bg_taut-ornaments.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -584,7 +533,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">11<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a Choomer made for <strong>DJ:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>DJ:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Title of the Playlist</h2>
@@ -597,35 +546,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-11" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playlist-suzie" class="playlist is-unguessed">
+        <section id="playlist-suzie" class="page playlist is-unguessed" style="background-image: url('img/bg_treeline-moon.png');">
             <div class="container container--vertical playlist__container">
                 <div class="vertical-center cf">
                     <div class="playlist__photos">
@@ -637,7 +583,7 @@
                         <h4 class="playlist__intro">On the <span class="playlist__number">12<super>th</super> choom of Christmas</span></h4>
 
                         <div class="playlist__attribution">
-                            <p class="playlist__made-for">a <span class="playlist__author">Choomer</span> made for <strong>Suzie:</strong></p>
+                            <p class="playlist__made-for"><span class="playlist__author">a Choomer</span> made for <strong>Suzie:</strong></p>
                         </div>
 
                         <h2 class="playlist__title">Title of the Playlist</h2>
@@ -650,45 +596,32 @@
                     </div>
 
                     <div class="playlist__content">
-                        <form id="playlist-form-guess-12" class="form">
-                            <select class="select playlist-guess__select">
-                                <option value="" selected="selected" class="is-blank"></option>
-                                <option value="alex">Alex</option>
-                                <option value="casey">Casey</option>
-                                <option value="danielle">Danielle</option>
-                                <option value="dj">DJ</option>
-                                <option value="jason">Jason</option>
-                                <option value="jeff">Jeff</option>
-                                <option value="jessica">Jessica</option>
-                                <option value="julia">Julia</option>
-                                <option value="kathia">Kathia</option>
-                                <option value="maria">Maria</option>
-                                <option value="suzie">Suzie</option>
-                                <option value="vicky">Vicky</option>
-                            </select>
+                        <select class="select playlist-guess__select">
+                            <option value="" selected="selected"></option>
+                            <option value="alex">Alex</option>
+                            <option value="casey">Casey</option>
+                            <option value="danielle">Danielle</option>
+                            <option value="dj">DJ</option>
+                            <option value="jason">Jason</option>
+                            <option value="jeff">Jeff</option>
+                            <option value="jessica">Jessica</option>
+                            <option value="julia">Julia</option>
+                            <option value="kathia">Kathia</option>
+                            <option value="maria">Maria</option>
+                            <option value="suzie">Suzie</option>
+                            <option value="vicky">Vicky</option>
+                        </select>
 
-                            <p class="notification">Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?</p>
+                        <p class="notification"></p>
 
-                            <button type="submit" class="btn btn--guess">Guess</button>
-                        </form>
-
-                        <div class="advent"></div>
+                        <button type="button" class="btn btn--guess">Guess</button>
+                        <button type="button" class="btn btn--continue">Continue</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <ul id="playlists-controls">
-            <li><a class="icon icon_arrow-prev playlists-control playlist-control--prev"></a></li>
-            <li><a class="icon icon_arrow-next playlists-control playlist-control--next"></a></li>
-        </ul>
-
-        <div id="playlists-scores">
-            <span class="score score--correct">0 nailed</span>
-            <span class="score score--incorrect">0 whiffed</span>
-        </div>
-
-        <div id="results">
+        <div id="results" class="page">
             <h1 class="results__final-score">You managed to correctly guess <span class="tally">5</span> of your friends.</h1>
             <p class="results__judgement">Yeah, maybe you should've taken your friends out for coffee for a good music conversation more often, jeez.</p>
 
@@ -698,7 +631,7 @@
             </div>
         </div>
 
-        <div id="closing">
+        <div id="closing" class="page">
             <h2 class="results__merry-christmas">Merry Christmas, Choom Gang!</h2>
             <p class="body results__closing">You guys all did a kickass job putting these together, I couldn't be prouder to have friends with good taste. Music and Choom forever, and a happy New Year!</p>
 
@@ -708,87 +641,16 @@
         </div>
     </main>
 
-    <nav id="playlists-navigation">
-        <ul>
-            <li class="playlists-navigation__item">
-                <a href="#playlist-kathia" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-jason" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-jeff" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-vicky" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-casey" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-jessica" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-alex" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-julia" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-maria" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-danielle" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-dj" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-
-            <li class="playlists-navigation__item">
-                <a href="#playlist-suzie" class="link-wrapper playlists-navigation__link">
-                    <span class="photo playlists-navigation__photo"></span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div id="playlists-scores" class="overlay-element">
+        <span class="score score--correct">0</span>
+        <span class="score score--incorrect">0</span>
+    </div>
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/src/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 
-<script src="js/build/combined.min.js"></script>
+<script src="js/build/combined.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>

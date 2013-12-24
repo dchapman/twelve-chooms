@@ -3,12 +3,47 @@
 .photo {}
 
 .btn {
-  &.btn--guess {}
+  cursor: pointer;
+  background-color: $tc_red;
+  border: none;
+  border-radius: 0.2rem;
+  color: $tc_white;
+  padding: 1.6rem 2rem 1.2rem;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: $bold;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
 
-  &.btn--share {}
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-  &.btn--continue {}
+  -webkit-transition: all 0.6s ease-in-out;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:hover {
+    color: $tc_pink;
+  }
 }
+
+.btn--guess {
+  opacity: 0;
+
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px);
+}
+
+.btn--continue {
+  opacity: 1;
+
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.btn--share {}
 
 form {}
 

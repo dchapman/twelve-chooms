@@ -16,19 +16,59 @@ body {
 
 #page-wrapper {
   position: relative;
+  width: 100%;
   height: 100%;
 }
 
-#page-header,
-#page-content,
-.container,
-.playlist,
-#results {
-  display: block;
-  min-height: 100%;
-  height: 100%;
-  position: relative;
+#introduction {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  -webkit-transition: all 1.2s ease-in-out;
+
+  &.is-hidden {
+    margin-top: -100%;
+  }
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+  backface-visiblity: hidden;
+  z-index: 1;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  > .container {
+    opacity: 0;
+  }
+}
+
+.is-current,
+.no-js .page {
+  visibility: visible;
+  opacity: 1;
+
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+
+  > .container {
+    opacity: 1;
+  }
+}
+
+.no-js body {
+  overflow: auto;
 }
 
 #main-content {}
@@ -44,13 +84,19 @@ body {
 
 #playlists {}
 
-#playlists-controls {
+.overlay-element {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
+  z-index: 9;
 }
 
-#playlists-scores {}
+#playlists-controls {
+  bottom: 0;
+}
+
+#playlists-scores {
+  top: 0;
+}
 
 #results {}

@@ -835,162 +835,306 @@ jQuery.extend( jQuery.easing,
       return n[m]("refresh")
     })
   })
-}).call(this);;(function ($) {
-    $(function () {
-        var $body = $('body'),
-            lastScrollTop = 0;
+}).call(this);;$(function () {
+    var TwelveChooms = (function() {
 
+        // playlist information
         var playlists = {
             'alex': {
                 name: 'Alex',
-                authored: 'maria'
+                authored: 'maria',
+                author: 'jason'
             },
             'casey': {
                 name: 'Casey',
-                authored: 'jessica'
+                authored: 'jessica',
+                author: 'danielle'
             },
             'danielle': {
                 name: 'Danielle',
-                authored: 'casey'
+                authored: 'casey',
+                author: 'julia'
             },
             'dj': {
                 name: 'DJ',
-                authored: 'julia'
+                authored: 'julia',
+                author: 'kathia'
             },
             'jason': {
                 name: 'Jason',
-                authored: 'alex'
+                authored: 'alex',
+                author: 'suzie'
             },
             'jeff': {
                 name: 'Jeff',
-                authored: 'vicky'
+                authored: 'vicky',
+                author: 'jessica'
             },
             'jessica': {
                 name: 'Jessica',
-                authored: 'jeff'
+                authored: 'jeff',
+                author: 'jeff'
             },
             'julia': {
                 name: 'Julia',
-                authored: 'danielle'
+                authored: 'danielle',
+                author: 'dj'
             },
             'kathia': {
                 name: 'Kathia',
-                authored: 'dj'
+                authored: 'dj',
+                author: 'vicky'
             },
             'maria': {
                 name: 'Maria',
-                authored: 'suzie'
+                authored: 'suzie',
+                author: 'alex'
             },
             'suzie': {
                 name: 'Suzie',
-                authored: 'jason'
+                authored: 'jason',
+                author: 'jason'
             },
             'vicky': {
                 name: 'Vicky',
-                authored: 'kathia'
+                authored: 'kathia',
+                author: 'jeff'
             }
+
         };
 
-        var randomResponse = function(responseType) {
+        // collections of response text
+        var responseChoose = [
+                'CHOOSE Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?'
+            ],
+            responseEmpty = [
+                'EMPTY You gotta guess somebody, dumdum!'
+            ],
+            responseTaunt = [
+                'TAUNT Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                'TAUNT Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
+                'TAUNT Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'],
+            responseIncorrect = [
+                'INCORRECT Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                'INCORRECT Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
+                'INCORRECT Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'
+            ],
+            responseCorrect = [
+                'CORRECT Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                'CORRECT Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
+                'CORRECT Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'
+            ];
+
+        var $main = $( '#page-content' ),
+            $pages = $main.children( '.page' ),
+            $continue = $( '.btn--continue'),
+            correct = 0,
+            incorrect = 0,
+            pagesCount = $pages.length,
+            current = 0,
+            isAnimating = false,
+            endCurrPage = false,
+            endNextPage = false,
+            animEndEventNames = {
+                'WebkitAnimation' : 'webkitAnimationEnd',
+                'OAnimation' : 'oAnimationEnd',
+                'msAnimation' : 'MSAnimationEnd',
+                'animation' : 'animationend'
+            },
+            animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
+            support = Modernizr.cssanimations;
+
+        var $btnBegin = $('.btn--begin'),
+            $guessSelect = $('.playlist-guess__select'),
+            $btnGuess = $('.btn--guess');
+
+        function init() {
+            $pages.each( function() {
+                var $page = $(this),
+                    isPlaylist = $page.hasClass('playlist');
+
+                if (isPlaylist) {
+                    var $notification = $page.find('.notification'),
+                        chooseText = randomResponse('choose');
+
+                    $notification.text(chooseText);
+                }
+
+                $page.data('originalClassList', $page.attr( 'class' ) );
+            });
+
+            $pages.eq( current ).addClass( 'is-current' );
+
+            // begin experience
+            $btnBegin.on('click', function() {
+                var $introduction = $('#introduction');
+
+                $introduction.addClass('is-hidden');
+            });
+
+            // change text when playlist selected
+            $guessSelect.on('change', function() {
+                var $notification = $(this).closest('.playlist').find('.notification'),
+                    taunt = randomResponse('taunt');
+
+                $notification.text(taunt);
+            });
+
+            $btnGuess.on('click', function() {
+                var $currPlaylist = $(this).closest('.playlist');
+
+                guessCheck($currPlaylist);
+            });
+
+            $continue.on( 'click', function() {
+                if( isAnimating ) { return false; }
+
+                nextPage();
+
+                return true;
+            });
+        }
+
+        function nextPage() {
+            if( isAnimating ) { return false; }
+
+            isAnimating = true;
+
+            var $currPage = $pages.eq( current );
+
+            if( current < pagesCount - 1 ) {
+                ++current;
+            }
+            else {
+                current = 0;
+            }
+
+            var $nextPage = $pages.eq( current ).addClass( 'is-current' ),
+                outClass = 'move-to-top', inClass = 'move-from-bottom';
+
+            $currPage.addClass( 'page--' + outClass ).on( animEndEventName, function() {
+                $currPage.off( animEndEventName );
+
+                endCurrPage = true;
+
+                if( endNextPage ) { onEndAnimation( $currPage, $nextPage ); }
+            } );
+
+            $nextPage.addClass( 'page--' + inClass ).on( animEndEventName, function() {
+                $nextPage.off( animEndEventName );
+
+                endNextPage = true;
+
+                if( endCurrPage ) { onEndAnimation( $currPage, $nextPage ); }
+            } );
+
+            if( !support ) { onEndAnimation( $currPage, $nextPage ); }
+
+            return true;
+        }
+
+        function onEndAnimation( $outpage, $inpage ) {
+            endCurrPage = false;
+            endNextPage = false;
+
+            resetPage( $outpage, $inpage );
+
+            isAnimating = false;
+        }
+
+        function resetPage( $outpage, $inpage ) {
+            $outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
+            $inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' is-current' );
+        }
+
+        function randomResponse(responseType) {
             var response;
 
             switch(responseType) {
+                case 'choose':
+                    response = chooseRandom(responseChoose);
+                    break;
+                case 'empty':
+                    response = chooseRandom(responseEmpty);
+                    break;
                 case 'taunt':
-                    response = responseTaunt[Math.floor(Math.random()*responseTaunt.length)];
+                    response = chooseRandom(responseTaunt);
                     break;
                 case 'incorrect':
-                    response = responseIncorrect[Math.floor(Math.random()*responseTaunt.length)];
+                    response = chooseRandom(responseIncorrect);
                     break;
                 case 'correct':
-                    response = responseCorrect[Math.floor(Math.random()*responseTaunt.length)];
+                    response = chooseRandom(responseCorrect);
                     break;
                 default:
                     return false;
             }
 
             return response;
-        };
+        }
 
-        var responseTaunt = [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                'Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
-                'Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'],
-            responseIncorrect = [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                'Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
-                'Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'
-            ],
-            responseCorrect = [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                'Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
-                'Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'
-            ];
+        function guessCheck($currPlaylist) {
+            var $notification = $currPlaylist.find('.notification'),
+            // owner of playlist
+                playlistOwner = $currPlaylist.attr('id').substring(9),
+            // who you guess wrote the playlist
+                guess = $currPlaylist.find('.playlist-guess__select').val(),
+            // and who they actually did
+                guessAuthored = playlists[guess].authored;
 
-        $(window).on('scroll', function(e) {
-            var st = $(this).scrollTop();
-            if (st > lastScrollTop){
-                console.log('you scrolled down!');
+            if (guess) {
+                var answer = guessAuthored === playlistOwner ? 'correct' : 'incorrect';
+
+                updatePlaylist($currPlaylist, $notification, playlistOwner, answer);
+                updateScore(answer);
             } else {
-                console.log('you scrolled up!');
+
+                var response = randomResponse('empty');
+                $notification.text(response);
             }
 
-            lastScrollTop = st;
-        });
+            return true;
+        }
 
-        // begin experience
-        $body.on('click', '.btn--begin', function(e) {
-           console.log('begin button clicked');
+        function updatePlaylist($currPlaylist, $notification, playlistOwner, answer) {
+            var response = randomResponse(answer),
+                playlistAuthor = playlists[playlistOwner].author,
+                $playlistAuthor = $currPlaylist.find('.playlist__author');
 
-           $body.scrollTo('#page-content', 1000, {easing: 'easeInOutCirc'});
-        });
+            $currPlaylist.removeClass('is-unguessed is-correct is-incorrect')
+                .addClass('is-' + answer);
 
-        // continue experience
-        $body.on('click', '.btn--continue', function(e) {
-            console.log('advancing to next playlist');
+            $notification.text(response);
 
-            var $nextPlaylist = $(this).closest('.playlist').next();
-            $body.scrollTo($nextPlaylist, 600, {easing: 'easeInOutCirc'});
-        });
+            $playlistAuthor.text( playlistAuthor === 'dj' ? 'DJ' : capitaliseFirstLetter(playlistAuthor) );
+        }
 
-        // change text when playlist selected
-        $body.on('change', '.playlist-guess__select', function(e) {
-            var taunt = randomResponse('taunt'),
-                $notification = $(this).closest('.playlist').find('.notification');
-
-            $notification.text(taunt);
-
-            console.log(taunt);
-        });
-
-        // guess
-        $body.on('submit', '.form', function(e) {
-            var $currPlaylist = $(this).closest('.playlist');
-
-            var guess = $(this).find('.playlist-guess__select').val(),
-                guessCheck = playlists[guess].authored,
-                receiver = $currPlaylist.attr('id').substring(9);
-
-            console.log(guessCheck);
-
-            $currPlaylist.removeClass('is-unguessed');
-
-            if(guessCheck === receiver) {
-                var correct = randomResponse('correct');
-                $(this).closest('.playlist').find('.notification').text(correct);
-
-                $currPlaylist.addClass('is-correct');
-
-                console.log('correct!');
-            } else {
-                var incorrect = randomResponse('incorrect');
-                $(this).closest('.playlist').find('.notification').text(incorrect);
-
-                $currPlaylist.addClass('is-incorrect');
-
-                console.log('incorrect!');
+        function updateScore(answer) {
+            if(answer === 'correct') {
+                correct++;
+                $('.score--correct').text(correct);
+            } else if (answer === 'incorrect') {
+                incorrect++;
+                $('.score--incorrect').text(incorrect);
             }
+        }
 
-            e.preventDefault();
-        });
-    });
-})(jQuery);
+        function chooseRandom(array) {
+            if (!array.length) { return false; }
+
+            var random = array[ Math.floor( Math.random() * array.length ) ];
+
+            random = random === 0 ? 1 : random;
+
+            return random;
+        }
+
+        function capitaliseFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        init();
+
+        return { init : init };
+    })();
+});

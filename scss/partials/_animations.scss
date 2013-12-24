@@ -1,0 +1,33 @@
+// animation class hooks
+.page--move-to-top {
+  -webkit-animation: moveToTop 0.8s ease both;
+  -moz-animation: moveToTop 0.8s ease both;
+  animation: moveToTop 0.8s ease both;
+}
+
+.page--move-from-bottom {
+  -webkit-animation: moveFromBottom .6s ease;
+  -moz-animation: moveFromBottom .6s ease;
+  animation: moveFromBottom .6s ease;
+}
+
+// animation keyframes
+@-webkit-keyframes moveToTop {
+  to { -webkit-transform: translateY(-100%); }
+}
+@-moz-keyframes moveToTop {
+  to { -moz-transform: translateY(-100%); }
+}
+@keyframes moveToTop {
+  to { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveFromBottom {
+  from { -webkit-transform: translateY(100%); }
+}
+@-moz-keyframes moveFromBottom {
+  from { -moz-transform: translateY(100%); }
+}
+@keyframes moveFromBottom {
+  from { transform: translateY(100%); }
+}
