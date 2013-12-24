@@ -28,13 +28,13 @@
   &.is-incorrect {
     .playlist__author {
       /*color: $tc_red;*/
-      color: lightpink;
+      color: $tc_red;
     }
   }
 
   .btn {
-    position: absolute;
-    bottom: 2.2rem;
+    bottom: 8rem;
+    left: 62%;
   }
 }
 
@@ -45,6 +45,7 @@
   box-shadow:
     0 0 0 0.1rem $tc_bluegreen,
     0 0 0 0.8rem #f0f0d8,
+    0.8rem 0.8rem 1rem 1rem rgba(0,0,0, 0.06),
     1.6rem 1.6rem 2rem 2rem rgba(0, 0, 0, 0.12);
   padding: 2.2rem;
   position: relative;
@@ -56,11 +57,11 @@
 }
 
 .playlist__intro {
-  color: $tc_black;
-  font-family: 'Oswald', Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  font-weight: $bold;
-  text-transform: uppercase;
+  color: $tc_darkblue;
+  font-family: 'Quintessential', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: $regular;
+  margin-bottom: 1.2rem;
 }
 
 .playlist__attribution {}
@@ -81,16 +82,16 @@
 }
 
 .playlist__title {
-  color: $tc_white;
+  color: $tc_black;
   font-family: 'Oswald', Arial, Helevetica, sans-serif;
   font-size: 4.4rem;
   font-weight: $bold;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-shadow:
       -0.2rem 0.2rem 0 $tc_beige,
-      -0.5rem 0.5rem 0 $tc_red,
-      -0.7rem 0.7rem 0 $tc_beige,
-      -0.9rem 0.9rem 0 $tc_bluegreen,
+      -0.4rem 0.4rem 0 $tc_red,
+      -0.5rem 0.5rem 0 $tc_beige,
+      -0.7rem 0.7rem 0 $tc_bluegreen,
       0 0 4rem rgba(0,0,0, 0.2);
   text-transform: uppercase;
   margin-bottom: 2.2rem;
@@ -110,9 +111,9 @@
   padding-bottom: 0.6rem;
   padding-left: 0.4rem;
   cursor: pointer;
-  min-width: 20rem;
-  font-size: 1.6rem;
-  margin-bottom: 8rem;
+  width: 100%;
+  font-size: 2.2rem;
+  margin: 6.4rem 0 3.4rem;
   outline: none;
 
   -webkit-transition: opacity 0.4s ease-in-out;

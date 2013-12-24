@@ -367,38 +367,38 @@ body {
 /* line 29, ../scss/partials/_playlists.scss */
 .playlist.is-incorrect .playlist__author {
   /*color: $tc_red;*/
-  color: lightpink;
+  color: #ae2f27;
 }
 /* line 35, ../scss/partials/_playlists.scss */
 .playlist .btn {
-  position: absolute;
-  bottom: 2.2rem;
+  bottom: 8rem;
+  left: 62%;
 }
 
 /* line 43, ../scss/partials/_playlists.scss */
 .card {
   background-color: #f0f0d8;
-  box-shadow: 0 0 0 0.1rem #85b394, 0 0 0 0.8rem #f0f0d8, 1.6rem 1.6rem 2rem 2rem rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 0.1rem #85b394, 0 0 0 0.8rem #f0f0d8, 0.8rem 0.8rem 1rem 1rem rgba(0, 0, 0, 0.06), 1.6rem 1.6rem 2rem 2rem rgba(0, 0, 0, 0.12);
   padding: 2.2rem;
   position: relative;
 }
 
-/* line 53, ../scss/partials/_playlists.scss */
+/* line 54, ../scss/partials/_playlists.scss */
 .playlist__header {
   text-align: center;
   margin: 0 auto 3.4rem;
 }
 
-/* line 58, ../scss/partials/_playlists.scss */
+/* line 59, ../scss/partials/_playlists.scss */
 .playlist__intro {
-  color: #363636;
-  font-family: 'Oswald', Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  color: #143e74;
+  font-family: 'Quintessential', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
 }
 
-/* line 68, ../scss/partials/_playlists.scss */
+/* line 69, ../scss/partials/_playlists.scss */
 .playlist__made-for {
   color: #363636;
   font-family: 'Oswald', Arial, Helvetica, sans-serif;
@@ -406,31 +406,31 @@ body {
   font-weight: 700;
   margin-bottom: 2.2rem;
 }
-/* line 75, ../scss/partials/_playlists.scss */
+/* line 76, ../scss/partials/_playlists.scss */
 .playlist__made-for .playlist__author {
   color: lightblue;
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
 
-/* line 83, ../scss/partials/_playlists.scss */
+/* line 84, ../scss/partials/_playlists.scss */
 .playlist__title {
-  color: #fafafa;
+  color: #363636;
   font-family: 'Oswald', Arial, Helevetica, sans-serif;
   font-size: 4.4rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-shadow: -0.2rem 0.2rem 0 #f0f0d8, -0.5rem 0.5rem 0 #ae2f27, -0.7rem 0.7rem 0 #f0f0d8, -0.9rem 0.9rem 0 #85b394, 0 0 4rem rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.12em;
+  text-shadow: -0.2rem 0.2rem 0 #f0f0d8, -0.4rem 0.4rem 0 #ae2f27, -0.5rem 0.5rem 0 #f0f0d8, -0.7rem 0.7rem 0 #85b394, 0 0 4rem rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   margin-bottom: 2.2rem;
 }
 
-/* line 99, ../scss/partials/_playlists.scss */
+/* line 100, ../scss/partials/_playlists.scss */
 .playlist__content {
   overflow: hidden;
 }
 
-/* line 103, ../scss/partials/_playlists.scss */
+/* line 104, ../scss/partials/_playlists.scss */
 .playlist-guess__select {
   opacity: 0;
   border: none;
@@ -441,9 +441,9 @@ body {
   padding-bottom: 0.6rem;
   padding-left: 0.4rem;
   cursor: pointer;
-  min-width: 20rem;
-  font-size: 1.6rem;
-  margin-bottom: 8rem;
+  width: 100%;
+  font-size: 2.2rem;
+  margin: 6.4rem 0 3.4rem;
   outline: none;
   -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
@@ -451,7 +451,7 @@ body {
   appearance: none;
 }
 
-/* line 125, ../scss/partials/_playlists.scss */
+/* line 126, ../scss/partials/_playlists.scss */
 .playlist__spotify {
   float: left;
   padding-right: 3.4rem;
