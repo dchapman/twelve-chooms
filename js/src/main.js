@@ -1,7 +1,7 @@
 $(function () {
     $('#page-content').imagesLoaded(function() {
 
-        $('#introduction').snowfall({flakeCount : 100, maxSpeed : 3, minSize: 3, maxSize: 12, round: true});
+        $('#introduction').snowfall({flakeCount : 40, maxSpeed : 3, minSize: 4, maxSize: 14, round: true});
 
         var TwelveChooms = (function() {
 
@@ -72,7 +72,7 @@ $(function () {
 
             // collections of response text
             var responseChoose = [
-                    'CHOOSE Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?'
+                    'Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?'
                 ],
                 responseEmpty = [
                     'EMPTY You gotta guess somebody, dumdum!'

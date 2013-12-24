@@ -4,18 +4,35 @@
 
   .page-title {
     color: $tc_white;
-    font-family: arial, helevetica, sans-serif;
-    font-size: 4rem;
+    font-family: 'Oswald', Arial, Helevetica, sans-serif;
+    font-size: 5.6rem;
     font-weight: $bold;
-    margin-bottom: 1.6rem;
+    letter-spacing: 0.06em;
+    text-shadow:
+      -0.2rem 0.2rem 0 $tc_blue,
+      -0.5rem 0.5rem 0 $tc_red,
+      -0.7rem 0.7rem 0 $tc_blue,
+      -0.9rem 0.9rem 0 $tc_bluegreen;
+    text-transform: uppercase;
+    margin-bottom: 4.4rem;
+  }
 
-    &:before {
-      content: '';
-    }
+  .title-prefix {
+    color: $tc_black;
+    font-family: 'Oswald', Arial, Helevetica, sans-serif;
+    font-size: 1.6rem;
+    font-weight: $regular;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.8rem;
   }
 
   .body {
-    margin-bottom: 3.4rem;
+    color: $tc_darkblue;
+    font-family: 'Quintessential', Times, serif;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 5.4rem;
   }
 
   .btn {}

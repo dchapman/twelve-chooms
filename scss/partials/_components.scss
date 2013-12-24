@@ -8,13 +8,14 @@
   border: none;
   border-radius: 0.2rem;
   color: $tc_white;
-  padding: 1.6rem 2rem 1.2rem;
-  font-family: arial, helvetica, sans-serif;
-  font-size: 1.6rem;
+  padding: 1.6rem 2rem;
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
   font-weight: $bold;
   text-decoration: none;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
+  letter-spacing: 0.04em;
   outline: none;
 
   -webkit-font-smoothing: antialiased;

@@ -31,7 +31,7 @@ body {
   -webkit-transition: all 1.2s ease-in-out;
 
   &.is-hidden {
-    margin-top: -100%;
+    margin-top: -160%;
   }
 }
 
@@ -86,7 +86,7 @@ body {
 #main-content {}
 
 .container {
-  min-width: 32rem;
+  min-width: 58rem;
   max-width: 97.8rem;
   width: auto;
   margin-left: auto;
