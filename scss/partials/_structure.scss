@@ -52,6 +52,13 @@ body {
   > .container {
     opacity: 0;
   }
+
+  .card {
+    -webkit-transform: translateY(5rem);
+    transform: translateY(5rem);
+
+    -webkit-transition: all 0.8s ease-in-out;
+  }
 }
 
 .is-current,
@@ -64,6 +71,11 @@ body {
 
   > .container {
     opacity: 1;
+  }
+
+  .card {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 

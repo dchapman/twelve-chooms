@@ -12,8 +12,10 @@
   font-family: arial, helvetica, sans-serif;
   font-size: 1.6rem;
   font-weight: $bold;
+  text-decoration: none;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
+  outline: none;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,9 +27,11 @@
   appearance: none;
 
   &:hover {
-    color: $tc_pink;
+    background-color: $tc_bluegreen;
   }
 }
+
+.btn--begin {}
 
 .btn--guess {
   opacity: 0;

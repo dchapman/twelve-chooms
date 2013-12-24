@@ -276,6 +276,7 @@ $(function () {
             if(answer === 'correct') {
                 correct++;
                 $('.score--correct').text(correct);
+                $('.tally').text(correct);
             } else if (answer === 'incorrect') {
                 incorrect++;
                 $('.score--incorrect').text(incorrect);

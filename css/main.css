@@ -106,8 +106,14 @@ body {
 .page > .container {
   opacity: 0;
 }
+/* line 56, ../scss/partials/_structure.scss */
+.page .card {
+  -webkit-transform: translateY(5rem);
+  transform: translateY(5rem);
+  -webkit-transition: all 0.8s ease-in-out;
+}
 
-/* line 58, ../scss/partials/_structure.scss */
+/* line 65, ../scss/partials/_structure.scss */
 .is-current,
 .no-js .page {
   visibility: visible;
@@ -115,18 +121,24 @@ body {
   -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
 }
-/* line 65, ../scss/partials/_structure.scss */
+/* line 72, ../scss/partials/_structure.scss */
 .is-current > .container,
 .no-js .page > .container {
   opacity: 1;
 }
+/* line 76, ../scss/partials/_structure.scss */
+.is-current .card,
+.no-js .page .card {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
 
-/* line 70, ../scss/partials/_structure.scss */
+/* line 82, ../scss/partials/_structure.scss */
 .no-js body {
   overflow: auto;
 }
 
-/* line 76, ../scss/partials/_structure.scss */
+/* line 88, ../scss/partials/_structure.scss */
 .container {
   min-width: 32rem;
   max-width: 97.8rem;
@@ -136,7 +148,7 @@ body {
   padding: 0 3.4rem;
 }
 
-/* line 87, ../scss/partials/_structure.scss */
+/* line 99, ../scss/partials/_structure.scss */
 .overlay-element {
   position: absolute;
   left: 0;
@@ -144,12 +156,12 @@ body {
   z-index: 9;
 }
 
-/* line 94, ../scss/partials/_structure.scss */
+/* line 106, ../scss/partials/_structure.scss */
 #playlists-controls {
   bottom: 0;
 }
 
-/* line 98, ../scss/partials/_structure.scss */
+/* line 110, ../scss/partials/_structure.scss */
 #playlists-scores {
   top: 0;
 }
@@ -248,8 +260,10 @@ body {
   font-family: arial, helvetica, sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
+  text-decoration: none;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
+  outline: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transition: all 0.6s ease-in-out;
@@ -257,19 +271,19 @@ body {
   -moz-appearance: none;
   appearance: none;
 }
-/* line 27, ../scss/partials/_components.scss */
+/* line 29, ../scss/partials/_components.scss */
 .btn:hover {
-  color: lightpink;
+  background-color: #85b394;
 }
 
-/* line 32, ../scss/partials/_components.scss */
+/* line 36, ../scss/partials/_components.scss */
 .btn--guess {
   opacity: 0;
   -webkit-transform: translateX(-100px);
   transform: translateX(-100px);
 }
 
-/* line 39, ../scss/partials/_components.scss */
+/* line 43, ../scss/partials/_components.scss */
 .btn--continue {
   opacity: 1;
   -webkit-transform: translateX(0);
@@ -323,64 +337,87 @@ body {
   /*color: $tc_red;*/
   color: lightpink;
 }
-
-/* line 50, ../scss/partials/_playlists.scss */
-.playlist__header {
-  text-align: center;
-  margin: 3.4rem auto;
-  padding: 2.2rem;
-  background-color: #fafafa;
+/* line 35, ../scss/partials/_playlists.scss */
+.playlist .btn {
+  position: absolute;
+  bottom: 2.2rem;
 }
 
-/* line 57, ../scss/partials/_playlists.scss */
+/* line 43, ../scss/partials/_playlists.scss */
+.card {
+  background-color: #f0f0d8;
+  box-shadow: 0 0 0 0.1rem #85b394, 0 0 0 0.8rem #f0f0d8, inset 0 0 5rem 0.4rem rgba(0, 0, 0, 0.04), 1.6rem 1.6rem 2rem 2rem rgba(0, 0, 0, 0.1);
+  padding: 2.2rem;
+  position: relative;
+}
+
+/* line 54, ../scss/partials/_playlists.scss */
+.playlist__header {
+  text-align: center;
+  margin: 0 auto 3.4rem;
+}
+
+/* line 59, ../scss/partials/_playlists.scss */
 .playlist__intro {
-  color: #222222;
+  color: #363636;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-/* line 67, ../scss/partials/_playlists.scss */
+/* line 69, ../scss/partials/_playlists.scss */
 .playlist__made-for {
-  color: #222222;
+  color: #363636;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 3.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 2.2rem;
-  text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.4);
 }
-/* line 75, ../scss/partials/_playlists.scss */
+/* line 76, ../scss/partials/_playlists.scss */
 .playlist__made-for .playlist__author {
   color: lightblue;
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
 
-/* line 85, ../scss/partials/_playlists.scss */
+/* line 84, ../scss/partials/_playlists.scss */
 .playlist__title {
-  color: #fafafa;
+  color: #85b394;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 6.4rem;
+  font-size: 3.4rem;
   font-weight: 700;
   text-transform: capitalize;
-  text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.4);
   margin-bottom: 2.2rem;
 }
 
-/* line 95, ../scss/partials/_playlists.scss */
+/* line 93, ../scss/partials/_playlists.scss */
 .playlist__content {
   overflow: hidden;
 }
 
-/* line 99, ../scss/partials/_playlists.scss */
+/* line 97, ../scss/partials/_playlists.scss */
 .playlist-guess__select {
   opacity: 0;
+  border: none;
+  border-bottom: 1px solid #ae2f27;
+  border-radius: 0;
+  background-color: transparent;
+  color: #222222;
+  padding-bottom: 0.6rem;
+  padding-left: 0.4rem;
+  cursor: pointer;
+  min-width: 20rem;
+  font-size: 1.6rem;
+  margin-bottom: 8rem;
+  outline: none;
   -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-/* line 106, ../scss/partials/_playlists.scss */
+/* line 119, ../scss/partials/_playlists.scss */
 .playlist__spotify {
   float: left;
   padding-right: 3.4rem;
