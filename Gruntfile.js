@@ -20,9 +20,10 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     'js/build/combined.js': [
+                        'js/src/vendor/imagesloaded.pkgd.js',
+                        'js/src/vendor/nprogress.js',
+                        'js/src/vendor/snowfall.jquery.js',
                         'js/src/vendor/jquery.easing.1.3.js',
-                        'js/src/vendor/jquery.scrollTo-1.4.3.1.js',
-                        'js/src/vendor/waypoints.min.js',
                         'js/src/main.js'
                     ]
                 }
