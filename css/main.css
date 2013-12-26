@@ -168,10 +168,11 @@ body {
 
 /* line 1, ../scss/partials/_utility.scss */
 .container--vertical {
-  height: 100%;
-  /*margin-top: 6rem;*/
+  /* height: 100%; */
+  height: auto;
+  margin-top: 14%;
 }
-/* line 5, ../scss/partials/_utility.scss */
+/* line 7, ../scss/partials/_utility.scss */
 .container--vertical:before {
   content: '';
   display: inline-block;
@@ -179,7 +180,7 @@ body {
   vertical-align: middle;
   margin-right: -0.25em;
 }
-/* line 13, ../scss/partials/_utility.scss */
+/* line 15, ../scss/partials/_utility.scss */
 .container--vertical .vertical-center {
   display: inline-block;
   vertical-align: middle;
@@ -187,7 +188,7 @@ body {
 }
 
 /* http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php */
-/* line 21, ../scss/partials/_utility.scss */
+/* line 23, ../scss/partials/_utility.scss */
 .cf:after {
   content: '';
   display: table;
@@ -336,17 +337,16 @@ body {
   margin-top: 0;
   padding: 2rem;
   padding-bottom: 0.4rem;
-  box-shadow: -1px 0 0 0 #add6e4;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   -webkit-transition-delay: 0.6s;
   transition-delay: 0.6s;
 }
-/* line 90, ../scss/partials/_components.scss */
+/* line 89, ../scss/partials/_components.scss */
 #playlists-scores.is-hidden {
   margin-top: -160%;
 }
-/* line 95, ../scss/partials/_components.scss */
+/* line 94, ../scss/partials/_components.scss */
 #playlists-scores:before, #playlists-scores:after {
   content: '';
   display: block;
@@ -360,19 +360,18 @@ body {
   position: absolute;
   bottom: -4rem;
 }
-/* line 109, ../scss/partials/_components.scss */
+/* line 108, ../scss/partials/_components.scss */
 #playlists-scores:before {
   left: 0;
   border-left-color: #143e74;
-  box-shadow: -1px 0 0 0 #add6e4;
 }
-/* line 115, ../scss/partials/_components.scss */
+/* line 113, ../scss/partials/_components.scss */
 #playlists-scores:after {
   right: 0;
   border-right-color: #143e74;
 }
 
-/* line 121, ../scss/partials/_components.scss */
+/* line 119, ../scss/partials/_components.scss */
 .score {
   color: #f1f1f1;
   display: block;
@@ -380,7 +379,7 @@ body {
   font-size: 2.2rem;
   text-align: center;
 }
-/* line 128, ../scss/partials/_components.scss */
+/* line 126, ../scss/partials/_components.scss */
 .score:before {
   color: #add6e4;
   display: block;
@@ -391,15 +390,15 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 139, ../scss/partials/_components.scss */
+/* line 137, ../scss/partials/_components.scss */
 .score.score--correct {
   margin-bottom: 2.2rem;
 }
-/* line 142, ../scss/partials/_components.scss */
+/* line 140, ../scss/partials/_components.scss */
 .score.score--correct:before {
   content: 'Correct';
 }
-/* line 148, ../scss/partials/_components.scss */
+/* line 146, ../scss/partials/_components.scss */
 .score.score--incorrect:before {
   content: 'Incorrect';
 }
@@ -436,51 +435,55 @@ body {
 }
 
 /* line 3, ../scss/partials/_playlists.scss */
+.playlist .container--vertical {
+  margin-top: 6%;
+}
+/* line 8, ../scss/partials/_playlists.scss */
 .playlist.is-unguessed .btn--guess {
   opacity: 1;
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 10, ../scss/partials/_playlists.scss */
+/* line 15, ../scss/partials/_playlists.scss */
 .playlist.is-unguessed .btn--continue {
   opacity: 0;
   -webkit-transform: translateX(100px);
   transform: translateX(100px);
 }
-/* line 17, ../scss/partials/_playlists.scss */
+/* line 22, ../scss/partials/_playlists.scss */
 .playlist.is-unguessed .playlist-guess__select {
   opacity: 1;
 }
-/* line 23, ../scss/partials/_playlists.scss */
+/* line 28, ../scss/partials/_playlists.scss */
 .playlist.is-correct .playlist__author {
   color: #85b394;
 }
-/* line 29, ../scss/partials/_playlists.scss */
+/* line 34, ../scss/partials/_playlists.scss */
 .playlist.is-incorrect .playlist__author {
   /*color: $tc_red;*/
   color: #ae2f27;
 }
-/* line 35, ../scss/partials/_playlists.scss */
+/* line 40, ../scss/partials/_playlists.scss */
 .playlist .btn {
-  bottom: 6rem;
+  bottom: 3.6rem;
   position: absolute;
 }
 
-/* line 43, ../scss/partials/_playlists.scss */
+/* line 48, ../scss/partials/_playlists.scss */
 .card {
   background-color: #f0f0d8;
-  box-shadow: 0 0 0 0.2rem #ae2f27, 0 0 0 0.5rem #f0f0d8, 0 0 0 0.7rem #85b394, 0 0 0 1.8rem #f0f0d8, 0.8rem 0.8rem 1rem 1rem rgba(0, 0, 0, 0.06), 1.6rem 1.6rem 2rem 2rem rgba(0, 0, 0, 0.12);
+  box-shadow: inset 1px 0 0 0 #f1f1f1, 0 0 0 0.2rem #ae2f27, 0 0 0 0.5rem #f0f0d8, 0 0 0 0.7rem #85b394, 0 0 0 1.8rem #f0f0d8, 0.8rem 0.8rem 1rem 1rem rgba(0, 0, 0, 0.06), 1.6rem 1.6rem 2rem 2rem rgba(0, 0, 0, 0.12);
   padding: 3.4rem;
   position: relative;
 }
 
-/* line 56, ../scss/partials/_playlists.scss */
+/* line 62, ../scss/partials/_playlists.scss */
 .playlist__header {
   text-align: center;
   margin: 0 auto 3.4rem;
 }
 
-/* line 61, ../scss/partials/_playlists.scss */
+/* line 67, ../scss/partials/_playlists.scss */
 .playlist__intro {
   color: #143e74;
   font-family: 'Quintessential', Arial, Helvetica, sans-serif;
@@ -489,7 +492,7 @@ body {
   margin-bottom: 1.2rem;
 }
 
-/* line 71, ../scss/partials/_playlists.scss */
+/* line 77, ../scss/partials/_playlists.scss */
 .playlist__made-for {
   color: #363636;
   font-family: 'Oswald', Arial, Helvetica, sans-serif;
@@ -497,14 +500,14 @@ body {
   font-weight: 700;
   margin-bottom: 2.2rem;
 }
-/* line 78, ../scss/partials/_playlists.scss */
+/* line 84, ../scss/partials/_playlists.scss */
 .playlist__made-for .playlist__author {
   color: lightblue;
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
 
-/* line 86, ../scss/partials/_playlists.scss */
+/* line 92, ../scss/partials/_playlists.scss */
 .playlist__title {
   color: #363636;
   font-family: 'Oswald', Arial, Helevetica, sans-serif;
@@ -516,12 +519,12 @@ body {
   margin-bottom: 2.2rem;
 }
 
-/* line 102, ../scss/partials/_playlists.scss */
+/* line 108, ../scss/partials/_playlists.scss */
 .playlist__content {
   overflow: hidden;
 }
 
-/* line 106, ../scss/partials/_playlists.scss */
+/* line 112, ../scss/partials/_playlists.scss */
 .playlist-guess__select {
   opacity: 0;
   border: none;
@@ -542,7 +545,7 @@ body {
   -webkit-appearance: none;
   appearance: none;
 }
-/* line 128, ../scss/partials/_playlists.scss */
+/* line 134, ../scss/partials/_playlists.scss */
 .playlist-guess__select:before {
   content: '';
   width: 0;
@@ -556,7 +559,7 @@ body {
   z-index: 999;
 }
 
-/* line 142, ../scss/partials/_playlists.scss */
+/* line 148, ../scss/partials/_playlists.scss */
 .playlist__spotify {
   float: left;
   padding-right: 3.4rem;

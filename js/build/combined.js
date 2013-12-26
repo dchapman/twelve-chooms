@@ -1741,7 +1741,7 @@ jQuery.extend( jQuery.easing,
                     'Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?'
                 ],
                 responseEmpty = [
-                    'EMPTY You gotta guess somebody, dumdum!'
+                    'You gotta guess somebody, dumdum!'
                 ],
                 responseTaunt = [
                     'TAUNT Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -1919,7 +1919,7 @@ jQuery.extend( jQuery.easing,
                 // and who they actually did
                     guessAuthored = playlists[guess].authored;
 
-                if (guess) {
+                if (guess !== 'Select a Choomer') {
                     var answer = guessAuthored === playlistOwner ? 'correct' : 'incorrect';
 
                     updatePlaylist($currPlaylist, $notification, playlistOwner, answer);
