@@ -1,6 +1,13 @@
-.snowflake {}
+.snow {
+  background-color: $tc_blue;
+}
 
 .photo {}
+
+.btn-container {
+  margin: 0 auto;
+  text-align: center;
+}
 
 .btn {
   cursor: pointer;
@@ -21,7 +28,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  -webkit-transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -66,10 +73,82 @@ select {
   &.playlists-control--next {}
 }
 
-.score {
-  &.score--correct {}
+#playlists-scores {
+  background-color: $tc_darkblue;
+  width: 9.2rem;
+  margin-top: 0;
+  padding: 2rem;
+  padding-bottom: 0.4rem;
+  box-shadow: -1px 0 0 0 $tc_blue;
 
-  &.score--incorrect {}
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+
+  &.is-hidden {
+    margin-top: -160%;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    border-top-width: 2rem;
+    border-bottom-width: 2rem;
+    border-left-width: 4rem;
+    border-right-width: 4rem;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: $tc_darkblue;
+    position: absolute;
+    bottom: -4rem;
+  }
+
+  &:before {
+    left: 0;
+    border-left-color: $tc_darkblue;
+    box-shadow: -1px 0 0 0 $tc_blue;
+  }
+
+  &:after {
+    right: 0;
+    border-right-color: $tc_darkblue;
+  }
+}
+
+.score {
+  color: $tc_white;
+  display: block;
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+
+  &:before {
+    color: $tc_blue;
+    display: block;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    font-weight: $light;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &.score--correct {
+    margin-bottom: 2.2rem;
+
+    &:before {
+      content: 'Correct';
+    }
+  }
+
+  &.score--incorrect {
+    &:before {
+      content: 'Incorrect';
+    }
+  }
 }
 
 .signature {

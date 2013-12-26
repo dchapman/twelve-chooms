@@ -1667,7 +1667,7 @@ jQuery.extend( jQuery.easing,
  */;$(function () {
     $('#page-content').imagesLoaded(function() {
 
-        $('#introduction').snowfall({flakeCount : 40, maxSpeed : 3, minSize: 4, maxSize: 14, round: true});
+        $(document).snowfall({flakeCount : 40, maxSpeed : 3, minSize: 4, maxSize: 14, round: true});
 
         var TwelveChooms = (function() {
 
@@ -1706,7 +1706,7 @@ jQuery.extend( jQuery.easing,
                 'jessica': {
                     name: 'Jessica',
                     authored: 'jeff',
-                    author: 'jeff'
+                    author: 'casey'
                 },
                 'julia': {
                     name: 'Julia',
@@ -1726,7 +1726,7 @@ jQuery.extend( jQuery.easing,
                 'suzie': {
                     name: 'Suzie',
                     authored: 'jason',
-                    author: 'jason'
+                    author: 'maria'
                 },
                 'vicky': {
                     name: 'Vicky',
@@ -1845,6 +1845,10 @@ jQuery.extend( jQuery.easing,
                 var $nextPage = $pages.eq( current ).addClass( 'is-current' ),
                     outClass = 'move-to-top', inClass = 'move-from-bottom';
 
+                if( $nextPage.attr('id') === 'results' ) {
+                    hideScore();
+                }
+
                 $currPage.addClass( 'page--' + outClass ).on( animEndEventName, function() {
                     $currPage.off( animEndEventName );
 
@@ -1921,8 +1925,8 @@ jQuery.extend( jQuery.easing,
                     updatePlaylist($currPlaylist, $notification, playlistOwner, answer);
                     updateScore(answer);
                 } else {
-
                     var response = randomResponse('empty');
+
                     $notification.text(response);
                 }
 
@@ -1951,6 +1955,10 @@ jQuery.extend( jQuery.easing,
                     incorrect++;
                     $('.score--incorrect').text(incorrect);
                 }
+            }
+
+            function hideScore() {
+                $('#playlists-scores').addClass('is-hidden');
             }
 
             function chooseRandom(array) {

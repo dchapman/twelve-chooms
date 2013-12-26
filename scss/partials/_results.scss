@@ -1,7 +1,56 @@
-.results__final-score {}
+#results {
+  .body {
+    margin-bottom: 0;
+  }
+
+  .btn-container {
+    margin-top: 3.4rem;
+  }
+}
+
+#closing {
+  background-color: $tc_white;
+}
+
+.tally {
+  color: $tc_red;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
+  font-size: 3.4rem;
+  font-weight: $regular;
+  vertical-align: middle;
+}
 
 .results__judgement {}
 
-.results__merry-christmas {}
+.results__merry-christmas {
+  color: $tc_red;
+  font-family: 'Quintessential', Times, serif;
+  font-size: 4.4rem;
+  margin-bottom: 2.2rem;
+  text-align: center;
+}
 
-.results__closing {}
+.results__closing {
+  margin-bottom: 5.4rem;
+}
+
+.signature {
+  .signature__love {
+    color: $tc_darkblue;
+    display: block;
+    font-family: 'Quintessential', Times, serif;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .signature__name {
+    color: $tc_black;
+    display: block;
+    font-family: 'Just Me Again Down Here', Times, serif;
+    font-size: 12rem;
+    position: relative;
+    text-align: center;
+    left: 0;
+    line-height: 0.74;
+  }
+}

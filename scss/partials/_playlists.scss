@@ -33,8 +33,8 @@
   }
 
   .btn {
-    bottom: 8rem;
-    left: 62%;
+    bottom: 6rem;
+    position: absolute;
   }
 }
 
@@ -43,11 +43,13 @@
 .card {
   background-color: $tc_beige;
   box-shadow:
-    0 0 0 0.1rem $tc_bluegreen,
-    0 0 0 0.8rem #f0f0d8,
+    0 0 0 0.2rem $tc_red,
+    0 0 0 0.5rem $tc_beige,
+    0 0 0 0.7rem $tc_bluegreen,
+    0 0 0 1.8rem $tc_beige,
     0.8rem 0.8rem 1rem 1rem rgba(0,0,0, 0.06),
     1.6rem 1.6rem 2rem 2rem rgba(0, 0, 0, 0.12);
-  padding: 2.2rem;
+  padding: 3.4rem;
   position: relative;
 }
 
@@ -106,14 +108,15 @@
   border: none;
   border-bottom: 1px solid $tc_red;
   border-radius: 0;
-  background-color: transparent;
-  color: #222222;
-  padding-bottom: 0.6rem;
-  padding-left: 0.4rem;
+  background-color: rgba(255,255,255, 0.5);
+  color: $tc_black;
+  padding: 1rem 1.6rem;
   cursor: pointer;
   width: 100%;
-  font-size: 2.2rem;
-  margin: 6.4rem 0 3.4rem;
+  font-family: 'Oswald', Helevetica, Arial, sans-serif;
+  font-size: 2.8rem;
+  font-weight: $light;
+  margin: 5.4rem 0 3.4rem;
   outline: none;
 
   -webkit-transition: opacity 0.4s ease-in-out;
@@ -121,6 +124,19 @@
 
   -webkit-appearance: none;
   appearance: none;
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 1rem solid $tc_bluegreen;
+    border-left: 1rem solid $tc_bluegreen;
+    border-right: 1rem solid $tc_bluegreen;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+  }
 }
 
 .playlist__spotify {

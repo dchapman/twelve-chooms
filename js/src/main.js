@@ -1,7 +1,7 @@
 $(function () {
     $('#page-content').imagesLoaded(function() {
 
-        $('#introduction').snowfall({flakeCount : 40, maxSpeed : 3, minSize: 4, maxSize: 14, round: true});
+        $(document).snowfall({flakeCount : 40, maxSpeed : 3, minSize: 4, maxSize: 14, round: true});
 
         var TwelveChooms = (function() {
 
@@ -40,7 +40,7 @@ $(function () {
                 'jessica': {
                     name: 'Jessica',
                     authored: 'jeff',
-                    author: 'jeff'
+                    author: 'casey'
                 },
                 'julia': {
                     name: 'Julia',
@@ -60,7 +60,7 @@ $(function () {
                 'suzie': {
                     name: 'Suzie',
                     authored: 'jason',
-                    author: 'jason'
+                    author: 'maria'
                 },
                 'vicky': {
                     name: 'Vicky',
@@ -179,6 +179,10 @@ $(function () {
                 var $nextPage = $pages.eq( current ).addClass( 'is-current' ),
                     outClass = 'move-to-top', inClass = 'move-from-bottom';
 
+                if( $nextPage.attr('id') === 'results' ) {
+                    hideScore();
+                }
+
                 $currPage.addClass( 'page--' + outClass ).on( animEndEventName, function() {
                     $currPage.off( animEndEventName );
 
@@ -255,8 +259,8 @@ $(function () {
                     updatePlaylist($currPlaylist, $notification, playlistOwner, answer);
                     updateScore(answer);
                 } else {
-
                     var response = randomResponse('empty');
+
                     $notification.text(response);
                 }
 
@@ -285,6 +289,10 @@ $(function () {
                     incorrect++;
                     $('.score--incorrect').text(incorrect);
                 }
+            }
+
+            function hideScore() {
+                $('#playlists-scores').addClass('is-hidden');
             }
 
             function chooseRandom(array) {
