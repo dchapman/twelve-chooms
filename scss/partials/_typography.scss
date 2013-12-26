@@ -13,6 +13,9 @@
   line-height: 1.3;
   margin-bottom: 5.4rem;
 
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+
   &.is-positive {
     color: $tc_bluegreen;
   }

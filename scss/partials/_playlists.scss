@@ -28,12 +28,21 @@
     .playlist__author {
       color: $tc_bluegreen;
     }
+
+    .notification {
+      color: $tc_bluegreen;
+      font-size: 2.4rem;
+    }
   }
 
   &.is-incorrect {
     .playlist__author {
-      /*color: $tc_red;*/
       color: $tc_red;
+    }
+
+    .notification {
+      color: $tc_red;
+      font-size: 2.4rem;
     }
   }
 
