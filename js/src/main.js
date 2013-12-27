@@ -258,16 +258,12 @@ $(function () {
                 // and who they actually did
                     guessAuthored = guess ? playlists[guess].authored : false;
 
-                console.log(guess);
-
                 if ( guessAuthored ) {
-                    console.log(guess);
                     var answer = guessAuthored === playlistOwner ? 'correct' : 'incorrect';
 
                     updatePlaylist($currPlaylist, $notification, playlistOwner, answer);
                     updateScore(answer);
                 } else {
-                    console.log(guess);
                     var response = randomResponse('empty');
 
                     $notification.text(response);
@@ -301,8 +297,6 @@ $(function () {
 
                 var $judgement = $('.results__judgement'),
                     judgement;
-
-                correct = 1;
 
                 if ( correct === 0 ) {
                     judgement = "JESUS, man. You couldn't even have ATTEMPTED to guess any of your friends correctly? You know what, go home. If you're already home, go to bed, and think about what you've done."
