@@ -1736,26 +1736,31 @@ jQuery.extend( jQuery.easing,
 
             };
 
+            var responseGuess, responseChoomer;
+
             // collections of response text
             var responseChoose = [
                     'Choose someone from the list above. Which of those dapper little fuckers do you think made this playlist?'
                 ],
                 responseEmpty = [
-                    'You gotta guess somebody, dumdum!'
+                    'You gotta guess somebody, dumdum!',
+                    'Don\'t get ahead of yourself, here. You have to guess somebody first.',
+                    'You, uh, you missed a step. Like, the only step of the process. You should guess somebody.'
                 ],
                 responseTaunt = [
-                    'TAUNT Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    'TAUNT Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
-                    'TAUNT Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'],
+                    'Oh come on, do you really think that\'s the right choomer? It\'s a dumb guess. I\'m dumber for seeing you make it.',
+                    'Well, I mean, if you want to just up and shoot yourself in the foot, you can go on right ahead. I can\'t really stop you.',
+                    'Is that your final answer? It could be right. It might be right. It\'s...probably not right, though.'
+                ],
                 responseIncorrect = [
-                    'INCORRECT Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    'INCORRECT Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
-                    'INCORRECT Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'
+                    'Nope! Wrong! I tried to warn you, but no, no one listens to me. My genius is my cross to bear, just as your lack of genius is yours.',
+                    'Wouldn\'t it have been nice if you had managed to guess correctly? Bet that would\'ve filled you with a nice warm glow. You guessed wrong, though.',
+                    'Sorry, that\'s not the answer I was looking for. They probably could\'ve written this playlist in some alternate universe, but not this one. Not the GOOD universe.'
                 ],
                 responseCorrect = [
-                    'CORRECT Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    'CORRECT Aliquam ultricies ornare lorem ac elementum? Donec odio tellus, ornare eu tempor nec, tincidunt in tellus.',
-                    'CORRECT Aenean nec ante sed dolor volutpat mattis. Pellentesque id nisi bibendum, tincidunt ligula quis, ullamcorper sem?'
+                    'You guessed it! You\'re an amazing piece of something else, and I don\'t mind telling you that. You should write an autobiography titled PIZAZZ.',
+                    'Damn straight they made that playlist. It was pretty obvious to me, really. But hey, I\'m just naturally gifted.',
+                    'Yep, they certainly did make this playlist! Sometimes I am just amazed at your brilliance. Just...blown away.'
                 ];
 
             var $main = $( '#page-content' ),
@@ -1917,14 +1922,18 @@ jQuery.extend( jQuery.easing,
                 // who you guess wrote the playlist
                     guess = $currPlaylist.find('.playlist-guess__select').val(),
                 // and who they actually did
-                    guessAuthored = playlists[guess].authored;
+                    guessAuthored = guess ? playlists[guess].authored : false;
 
-                if (guess !== 'Select a Choomer') {
+                console.log(guess);
+
+                if ( guessAuthored ) {
+                    console.log(guess);
                     var answer = guessAuthored === playlistOwner ? 'correct' : 'incorrect';
 
                     updatePlaylist($currPlaylist, $notification, playlistOwner, answer);
                     updateScore(answer);
                 } else {
+                    console.log(guess);
                     var response = randomResponse('empty');
 
                     $notification.text(response);
@@ -1955,6 +1964,25 @@ jQuery.extend( jQuery.easing,
                     incorrect++;
                     $('.score--incorrect').text(incorrect);
                 }
+
+                var $judgement = $('.results__judgement'),
+                    judgement;
+
+                correct = 1;
+
+                if ( correct === 0 ) {
+                    judgement = "JESUS, man. You couldn't even have ATTEMPTED to guess any of your friends correctly? You know what, go home. If you're already home, go to bed, and think about what you've done."
+                } else if ( correct < 2 ) {
+                    judgement = "Not bad. At least if you were a cat walking across the keyboard. Take your friends out for a music conversation over coffee once in a while, why don't you."
+                } else if ( correct < 7 ) {
+                    judgement = "You know what, I respect that you tried. You didn't do too bad. Not like that other guy. That other guy was TERRIBLE."
+                } else if ( correct < 11 ) {
+                    judgement = "Damn, you know, you actually rocked pretty hard. Can't deny it. Even an asshole like me could admit that was pretty hard to do."
+                } else if ( correct === 12 ) {
+                    judgement = "HOLY SHIT. You just ruined this quiz. Just rocked the hell out of it. I am amazed. Frankly, you should be the computer, not me. I bow to you, sir and/or madam. Good day."
+                }
+
+                $judgement.text(judgement);
             }
 
             function hideScore() {
