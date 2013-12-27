@@ -259,8 +259,20 @@ body {
   line-height: 1.3;
   text-align: center;
 }
+/* line 8, ../scss/partials/_typography.scss */
+.body a {
+  color: #ae2f27;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+/* line 16, ../scss/partials/_typography.scss */
+.body a:hover {
+  color: #85b394;
+}
 
-/* line 9, ../scss/partials/_typography.scss */
+/* line 22, ../scss/partials/_typography.scss */
 .notification {
   color: #363636;
   font-family: 'Quintessential', Times, serif;
@@ -270,11 +282,11 @@ body {
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
-/* line 19, ../scss/partials/_typography.scss */
+/* line 32, ../scss/partials/_typography.scss */
 .notification.is-positive {
   color: #85b394;
 }
-/* line 23, ../scss/partials/_typography.scss */
+/* line 36, ../scss/partials/_typography.scss */
 .notification.is-negative {
   color: #ae2f27;
 }
@@ -534,9 +546,15 @@ body {
 /* line 118, ../scss/partials/_playlists.scss */
 .playlist__content {
   overflow: hidden;
+  padding-bottom: 2.2rem;
+}
+/* line 122, ../scss/partials/_playlists.scss */
+.playlist__content .body {
+  text-align: left;
+  font-size: 1.8rem;
 }
 
-/* line 122, ../scss/partials/_playlists.scss */
+/* line 128, ../scss/partials/_playlists.scss */
 .playlist-guess__select {
   opacity: 0;
   border: none;
@@ -557,7 +575,7 @@ body {
   -webkit-appearance: none;
   appearance: none;
 }
-/* line 144, ../scss/partials/_playlists.scss */
+/* line 150, ../scss/partials/_playlists.scss */
 .playlist-guess__select:before {
   content: '';
   width: 0;
@@ -571,7 +589,7 @@ body {
   z-index: 999;
 }
 
-/* line 158, ../scss/partials/_playlists.scss */
+/* line 164, ../scss/partials/_playlists.scss */
 .playlist__spotify {
   float: left;
   padding-right: 3.4rem;

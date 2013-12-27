@@ -4,6 +4,19 @@
   font-size: 2.2rem;
   line-height: 1.3;
   text-align: center;
+
+  a {
+    color: $tc_red;
+    font-weight: $bold;
+    text-decoration: none;
+
+    -webkit-transition: color 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: $tc_bluegreen;
+    }
+  }
 }
 
 .notification {
